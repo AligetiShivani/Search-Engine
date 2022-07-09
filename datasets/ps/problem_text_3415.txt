@@ -1,0 +1,47 @@
+
+You are given three arrays A, B, and C, all of length N. You also have two integers k1​ and k2​.
+For every index 1≤i≤N, you must choose exactly one of Ai​,Bi​, or Ci​. Find the maximum possible sum of chosen elements, such that:
+
+At most k1​ elements are picked from A, and
+At most k2​ elements are picked from B
+
+Input Format
+
+The first line of input contains an integer T, denoting the number of test cases. T test cases follow.
+Each test case consists of five lines of input.
+The first line of each test case contains the integer N — the length of the arrays.
+The second line contains N space-separated integers A1​,A2​,…,AN​.
+The third line contains N space-separated integers B1​,B2​,…,BN​.
+The fourth line contains N space-separated integers C1​,C2​,…,CN​.
+The fifth line contains two space-separated integers k1​ and k2​.
+
+Output Format
+For each test case, output on a new line the maximum sum possible by selecting the elements under the specified constraints.
+Constraints
+
+
+1≤T≤105
+1≤N≤5⋅105
+1≤Ai​,Bi​,Ci​≤109
+0≤k1​,k2​≤N
+It is guaranteed that the sum of N across all test cases doesn't exceed 5⋅105.
+
+
+Sample 1:
+InputOutput2
+4
+10 4 8 5
+9 7 6 6
+5 5 7 11
+2 1
+5
+12 44 32 12 32
+43 32 12 32 31
+34 12 43 23 41
+3 4
+36
+203
+
+Explanation:
+Test case 1: Choose A1​=10,B2​=7,A3​=8 and C4​=11, for a sum of 36.
+Test case 2: Choose B1​=43,A2​=44,C3​=43,B4​=32,C5​=41, for a sum of 203.

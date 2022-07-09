@@ -1,0 +1,38 @@
+
+You are given an array A of length N.
+You can do the following operation on the array atmost once:
+
+Choose any non-negative integer X and a subarray [L,R] (1≤L≤R≤N) and update Ai​=Ai​&amp;X for all L≤i≤R. Here &amp; denotes bitwise AND operation.
+
+Find the maximum bitwise XOR of all the elements of the updated array you can achieve.
+Input Format
+
+First line will contain T, the number of test cases. Then the test cases follow.
+First line of each test case contains an integer N - denoting the length of array A.
+Second line contains N integers A1​,A2​,…AN​ - denoting the array A.
+
+Output Format
+For each test case, output the maximum XOR of all the elements of the updated array you can achieve.
+Constraints
+
+
+1≤T≤104
+2≤N≤2⋅105
+0≤Ai​<230
+Sum of N over all test cases do not exceed 2⋅105
+
+
+Sample 1:
+InputOutput2
+4
+3 3 3 3
+3
+1 6 4
+3
+7
+
+Explanation:
+Test Case 1: We can choose the subarray [L,R] as [2,4] and X=0. Thus, A2​=3&amp;0=0,A3​=3&amp;0=0, and A4​=3&amp;0=0. The updated array is [3,0,0,0]. The bitwise XOR of all the elements of the updated array is 3⊕0⊕0⊕0=3.
+It can be shown that the bitwise XOR of the updated array cannot exceed 3 after applying at most one operation.
+Test Case 2: We can choose the subarray [L,R] as [1,2] and X=3. Thus, A1​=1&amp;3=1 and A2​=6&amp;3=2. The updated array is [1,2,4]. The bitwise XOR of all the elements of the updated array is 1⊕2⊕4=7.
+It can be shown that the bitwise XOR of the updated array cannot exceed 7 after applying at most one operation.

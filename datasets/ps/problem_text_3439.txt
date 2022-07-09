@@ -1,0 +1,62 @@
+
+You are given a prime number P and two integers A,B. Your task is to find the minimum value of (AT⋅B)modP over all nonnegative integers T.
+
+
+The only line of input contains three space-separated integers P,A,B.
+It's guaranteed that P is prime.
+
+Output Format
+Output the minimum value of (AT⋅B)modP over all nonnegative integers T.
+Constraints
+
+
+3≤P≤1013
+1≤A,B<P
+P is a prime number.
+
+
+Subtasks
+
+
+Subtask 1 (5 points):
+
+P≤107
+
+
+Subtask 2 (20 points):
+
+P≤109
+
+
+Subtask 3 (25 points):
+
+P≤1011
+
+
+Subtask 4 (20 points):
+
+P≤1012
+
+
+Subtask 5 (30 points):
+
+Original constraints.
+
+
+
+
+Sample 1:
+InputOutput7 2 3
+3
+
+Sample 2:
+InputOutput11 10 8
+3
+
+Sample 3:
+InputOutput101 42 37
+1
+
+Explanation:
+Test case 1: Choose T=0 to get (20⋅3)mod7=3, which is the minimum possible value.
+Test case 2: Choose T=1 to get (101⋅8)mod11=80mod11=3, which is the minimum possible value.

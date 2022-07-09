@@ -1,0 +1,28 @@
+
+Read problems statements in Mandarin chinese, Russian and Vietnamese as well.
+You are given N integers a1​,a2​,…,aN​. Let's define functions f and g:
+f(x,k)=(x+a1​)k+(x+a2​)k+⋯+(x+aN​)k
+g(t,k)=f(0,k)+f(1,k)+⋯+f(t,k)
+You are also given integers T and K. Calculate g(T,i) modulo 109+7 for each i between 0 and K inclusive.
+Input
+
+The first line of the input contains three space-separated integers N, K and T.
+The second line contains N space-separated integers a1​,a2​,…,aN​.
+
+Output
+Print a single line containing K+1 space-separated integers — the values of g(T,0),g(T,1),…,g(T,K) modulo 109+7.
+Constraints
+
+1≤N≤105
+1≤K≤5⋅104
+1≤T≤1018
+0≤ai​<109+7
+
+Subtasks
+Subtask #1 (10 points): N=1
+Subtask #2 (10 points): ai​=a1i​ modulo 109+7 for each valid i
+Subtask #3 (10 points): ai​=a1​+i−1 modulo 109+7 for each valid i
+Subtask #4 (70 points): original constraints
+Sample 1:
+InputOutput2 3 4
+0 110 25 85 325

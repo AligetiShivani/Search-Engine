@@ -1,0 +1,30 @@
+
+Read problem statements in Hindi, Bengali, Mandarin Chinese, Russian, and Vietnamese as well.
+You are given an integer sequence A1​,A2​,…,AN​ and an integer X. Consider a N×N matrix B, where Bi,j​=Ai​+Aj​ for each valid i and j.
+You need to find the number of square submatrices of B such that the sum of their elements is X. Formally, find the number of quartets (x1​,y1​,x2​,y2​) such that 1≤x1​≤x2​≤N, 1≤y1​≤y2​≤N, x2​−x1​=y2​−y1​ and ∑i=x1​x2​​∑j=y1​y2​​Bi,j​=X.
+Input
+
+The first line of the input contains a single integer T denoting the number of test cases. The description of T test cases follows.
+The first line of each test case contains two space-separated integers N and X.
+The second line contains N space-separated integers A1​,A2​,…,AN​.
+
+Output
+For each test case, print a single line containing one integer ― the number of square submatrices with sum X.
+Constraints
+
+1≤T≤100
+1≤X≤106
+1≤N≤105
+1≤Ai​≤106 for each valid i
+the sum of N over all test cases does not exceed 106
+
+Subtasks
+Subtask #1 (50 points): the sum of N over all test cases does not exceed 1,000
+Subtask #2 (50 points): original constraints
+Sample 1:
+InputOutput2
+5 36
+1 2 3 1 12
+4 54
+3 3 3 36
+4

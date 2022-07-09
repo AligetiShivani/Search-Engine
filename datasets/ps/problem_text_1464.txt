@@ -1,0 +1,68 @@
+
+You are given an array A=[A1​,A2​,…,AN​], consisting of N integers. In one move, you can take two adjacent numbers Ai​ and Ai+1​, delete them, and then insert the number Ai​∧Ai+1​ at the deleted position. Here, ∧ denotes bitwise AND. Note that after this operation, the length of the array decreases by one.
+Formally, as long as ∣A∣>1 (where ∣A∣ denotes the current length of A), you can pick an index 1≤i<∣A∣ and transform A into [A1​,A2​,…,Ai−1​,Ai​∧Ai+1​,Ai+2​,…,A∣A∣​].
+Find the minimum number of moves required to make all numbers in the resulting array equal.
+Input Format
+
+The first line of input contains an integer T — the number of test cases you need to solve.
+The first line of each test case contains one integer N, the size of the array.
+The second line of each test case contains N space-separated integers A1​,…,AN​ — the elements of the array A.
+
+Output Format
+For each test case, output on a new line the minimum number of moves required to make all numbers equal.
+Constraints
+
+
+1≤T≤106
+2≤N≤106
+Sum of N over all test cases is at most 106.
+0≤Ai​<230
+
+
+Subtasks
+
+
+Subtask 1 (20 points):
+
+0≤Ai​≤255
+Sum of N over all test cases is at most 255.
+
+
+Subtask 2 (30 points):
+
+Sum of N over all test cases is at most 2000.
+
+
+Subtask 3 (50 points):
+
+Original constraints.
+
+
+
+
+Sample 1:
+InputOutput4
+4
+0 0 0 1
+2
+1 1
+6
+1 2 3 4 5 6
+4
+2 28 3 22
+1
+0
+4
+3
+
+Explanation:
+Test case 1: Choose i=3 to make the array [0,0,0∧1]=[0,0,0].
+Test case 2: All elements of the array are already equal.
+Test case 3: One possible sequence of moves is as follows:
+
+Choose i=1, making the array [1∧2,3,4,5,6]=[0,3,4,5,6]
+Choose i=2, making the array [0,0,5,6]
+Choose i=3, making the array [0,0,4]
+Choose i=2, making the array [0,0]
+
+It can be verified that in this case, making every element equal using 3 or fewer moves is impossible.

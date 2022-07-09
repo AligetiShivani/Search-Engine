@@ -1,0 +1,104 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Engine</title>
+</head>
+
+<body>
+    <div class="head">
+        <header>
+            <h1>Search Your CodeChef Practice Question</h1>
+        </header>
+    </div>
+   <form class="formm">
+        <h3 style="color: white">Enter your query</h3>
+        <input type="text" name="question" id="question" /><br>
+        <input type="submit" value="Click me to search" />
+    </form>
+
+    <div class="loading"></div>
+
+    </div>
+    <div class="question">
+        <div class="title"></div>
+        <div class="url">
+            <a href="" target="_blank"></a>
+        </div>
+        <div class="body"></div>
+    </div>
+
+    </div>
+    <div class="question">
+        <div class="title"></div>
+        <div class="url">
+            <a href="" target="_blank"></a>
+        </div>
+        <div class="body"></div>
+    </div>
+    <div class="question">
+        <div class="title"></div>
+        <div class="url">
+            <a href="" target="_blank"></a>
+        </div>
+        <div class="body"></div>
+    </div>
+    <div class="question">
+        <div class="title"></div>
+        <div class="url">
+            <a href="" target="_blank"></a>
+        </div>
+        <div class="body"></div>
+    </div>
+    <div class="question">
+        <div class="title"></div>
+        <div class="url">
+            <a href="" target="_blank"></a>
+        </div>
+        <div class="body"></div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    const form = document.querySelector("form");
+    const questionElement = form.question;
+    const questions = document.querySelectorAll(".question");
+    const titles = document.querySelectorAll(".title");
+    const urls = document.querySelectorAll(".url a");
+    const quesBody = document.querySelectorAll(".body");
+    const loadingDiv = document.querySelector(".loading");
+    
+
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const question = questionElement.value;
+        for (let i = 0; i < 5; i++) {
+            titles[i].innerHTML = ``;
+            urls[i].innerHTML = ``;
+            quesBody[i].innerHTML = ``;
+        }
+        loadingDiv.innerHTML = `Loading...`;
+        //fetch
+        try {
+            const res = await fetch(`/search?question=${question}`, {
+                method: "GET",
+            });
+            const data = await res.json();
+            loadingDiv.innerHTML = ``;
+            for (let i = 0; i < 5; i++) {
+                titles[i].innerHTML = `<h1>${data[i].title}</h1>`;
+                //urls[i]= `${data[i].url}`;
+                urls[i].innerHTML=`<a href="${data[i].url}">View Source Page</a>`
+                quesBody[i].innerHTML = `<br>${data[i].statement}`;
+                // string br ="<br>";
+                quesBody[i].innerHTML = quesBody[i].innerHTML.replace("\n", "<br>");
+                // quesBody[i] = quesBody[i].replace('\n', "<br/>");
+            }
+        } catch (error) {
+            alert(error);
+        }
+    });
+</script>

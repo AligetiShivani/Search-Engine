@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Engine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="heading">
+            <h1>Search Your CodeChef Practice Question</h1>
+    </div>
+   <form class="form">
+        <h3>Please enter your query</h3>
+        <div class="search-bar">
+            <input type="text" name="question" id="question" placeholder="Search" class="search-field"/><br>
+            <input type="submit" value="Ask Me" class="submit-button"/>
+        </div>
+    </form>
+
+    <div class="loading"></div>
+    <div class="relevant-results">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    const form = document.querySelector("form");
+    const questionElement = form.question;
+    const loadingDiv = document.querySelector(".loading");
+    var resultContainer= document.querySelector(".relevant-results");
+
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        resultContainer.innerHTML=``;
+        const question = questionElement.value;
+        loadingDiv.innerHTML = `Loading...`;
+        //fetch
+        try {
+            const res = await fetch(`/search?question=${question}`, {
+                method: "GET",
+            });
+            const data = await res.json();
+            loadingDiv.innerHTML = ``;
+            for(var i=0; i<5; i++){
+                console.log("i",i,data);
+
+                var result=document.createElement("div");
+                result.classList.add("result");
+                var resultProblemStatement=document.createElement("div");
+                resultProblemStatement.classList.add("problem-statement","res");
+                var resultCode = document.createElement("div");
+                resultCode.classList.add("code","res");
+                var resultTitle = document.createElement("div");
+                resultTitle.classList.add("title","res");
+                var resultSubmission = document.createElement("div");
+                resultSubmission.classList.add("submission", "res");
+                var resultDifficulty = document.createElement("div");
+                resultDifficulty.classList.add("difficulty","res");
+                var resultUrl = document.createElement("div");
+                resultUrl.classList.add("url","res");
+
+                result.appendChild(resultTitle);
+                result.appendChild(resultCode);
+                result.appendChild(resultSubmission);
+                result.appendChild(resultDifficulty);
+                result.appendChild(resultProblemStatement);
+                result.appendChild(resultUrl);
+                resultContainer.appendChild(result);
+
+                resultTitle.innerHTML=`<h1>${data[i].title}</h1>`;
+                resultCode.innerHTML=`<p>Code : ${data[i].code}</p>`;
+                resultSubmission.innerHTML= `<p>Submission : ${data[i].submission}</p>`;
+                resultDifficulty.innerHTML= `<p>Difficulty : ${data[i].difficulty}</p>`;
+                resultProblemStatement.innerHTML = `<h1>Problem Statement:</h1><p>${data[i].txt}</p>`;
+                resultUrl.innerHTML= `<span>Url : </span><a href="${data[i].url}" target="_blank" class="url"> ${data[i].url}</a>`;
+            }
+        } catch (error) {
+            alert(error);
+        }
+    });
+</script>

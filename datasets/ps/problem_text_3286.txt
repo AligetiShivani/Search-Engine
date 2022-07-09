@@ -1,0 +1,70 @@
+
+Chef is collecting special ingredients in a cave. The cave has N chambers and N−1 passageways forming a tree. In other words, it is possible to move from one chamber to any other chamber using the passageways. Each passageway is of equal length and can be traversed in both directions.
+At 0-th second, Chef is at chamber Aj​. At the start of each second, he can choose to either stay in the current chamber or move along a passageway to another chamber in 1 second. To collect more ingredients, he wants to visit as many distinct chambers as possible before leaving the cave at chamber Bj​.
+There is a ghost that copies Chef's movement with a delay of Kj​ seconds. This means that:
+
+Before Kj​-th second, the ghost is not in the cave yet.
+At Kj​-th second, the ghost appears in chamber Aj​.
+At t-th second (t≥Kj​), the ghost will be in the same place that Chef was at (t−Kj​)-th second.
+
+The ghost will capture the Chef if, at some moment of time, both of them are in the same chamber or using the same passageway, including the moment when Chef is about to leave at chamber Bj​.
+For a given start chamber Aj​, end chamber Bj​ and ghost movement delay Kj​, help Chef determine the maximum number of distinct chambers he can visit. You have to answer Q such queries for the same cave.
+Input Format
+
+
+The first line contains two space-separated integers N and Q, representing the number of chambers and queries respectively.
+
+
+Each of the next N−1 lines contains two space-separated integers Ui​ and Vi​, representing the two endpoints of a passageway.
+
+
+Each of the next q lines contains three space-separated integers Aj​, Bj​ and Kj​, representing the start chamber, end chamber and ghost's movement delay for a query respectively.
+
+
+Output Format
+For each query, output on a single line the maximum number of distinct chambers that Chef can visit.
+Constraints
+
+
+2≤N≤2⋅105
+1≤Q≤2⋅105
+1≤Ui​,Vi​≤N
+The chambers and passageways form a tree.
+1≤Aj​,Bj​≤N
+1≤Kj​≤109
+
+
+Subtasks
+
+
+Subtask 1 (10 points): Each chamber is connected by at most two passageways.
+Subtask 2 (20 points): K=1 for all queries.
+Subtask 3 (30 points): 2≤N≤5000, 1≤Q≤5000
+Subtask 4 (40 points): Original constraints.
+
+
+Sample 1:
+InputOutput10 4
+1 2
+2 3
+3 4
+5 1
+6 1
+6 7
+8 7
+8 9
+10 7
+2 7 4
+10 5 1
+6 6 3
+9 8 765
+8
+5
+7
+10
+
+Explanation:
+The graph in the sample test case looks like this:
+
+For the first query, the following table describes one way to move to visit 8 chambers. Notice that Chef can choose to stay in a chamber. It can be shown that there is no way to visit more than 8 chambers.
+TimeChef’s positionGhost’s position02–13–22–31–45251366277181059711086118712710

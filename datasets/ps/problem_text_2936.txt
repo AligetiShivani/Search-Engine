@@ -1,0 +1,55 @@
+
+You are given two sets of points S and T on the xy-plane. S contains N points and T contains  M points.
+The points (xi​,yi​) in T have a special property - for every 1≤i<M, xi+1​>xi​ and yi+1​<yi​.
+For each point (x,y)∈T, find the minimum Manhattan distance between (x,y) and a point in S. Formally, for each (x,y)∈T, find
+min(xi​,yi​)∈S​(∣x−xi​∣+∣y−yi​∣)
+Input Format
+
+The first line of input contains two space-separated integers N and M - the size of S and T, respectively.
+The next N lines each contain two space-separated integers xi​ and yi​, representing the points of S.
+The last M lines each contain two space-separated integers xi​ and yi​, representing the points of T.
+
+Output Format
+
+For each test case, output M lines. The i-th of these lines should contain a single integer, the minimum Manhattan distance between the i-th point in T and a point in set S.
+
+Constraints
+
+
+1≤N≤105
+1≤M≤105
+−109≤xi​,yi​≤109
+
+
+Subtasks
+
+Subtask 1(100 points): Original constraints
+
+Sample 1:
+InputOutput2 2
+0 0
+1 1
+0 1
+1 01
+1
+Explanation:
+The sets are S={(0,0),(1,1)} and T={(0,1),(1,0)}. Every point in S is at a (Manhattan) distance of 1 from every point in T.
+Sample 2:
+InputOutput3 3
+2 2
+3 3
+3 1
+0 3
+3 1
+5 03
+0
+3
+Explanation:
+The sets are S={(2,2),(3,3),(3,1)} and T={(0,3),(3,1),(5,0)}.
+
+The point closest to (0,3) is (3,3), with distance 3
+The point (3,1) in S coincides with the point (3,1) in set T.
+The point closest to (5,0) is (3,1), with distance 3
+
+
+The points in red are the points of the set S and those in blue belong to set T. The green-coloured line segments represent the Manhattan distance between two points.

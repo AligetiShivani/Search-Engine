@@ -1,0 +1,20 @@
+{
+  "name": "search_engine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "nodemon searchEngine.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon searchEngine.js"
+  },
+  "author": "Aligeti_Shivani",
+  "license": "ISC",
+  "dependencies": {
+    "@stdlib/string-remove-punctuation": "^0.0.8",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "node-tfidf": "^0.0.2",
+    "nodemon": "^2.0.18"
+  }
+}

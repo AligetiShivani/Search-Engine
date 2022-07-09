@@ -1,0 +1,41 @@
+
+You're given an array of integers A and a permutation P, each of size N. Recall that a permutation of length N is an array where every element from 1 to N occurs exactly once.
+The following operation is performed on the array K times:
+
+For each index i (1≤i≤N), add APi​​ to Ai​ simultaneously.
+
+For example, if A=[2,6,1,7] and P=[3,1,4,2], after one operation A=[2+A3​,6+A1​,1+A4​,7+A2​]=[3,8,8,13].
+Find the values of A modulo 998244353, after performing the above operation K times.
+Input Format
+
+The first line contains two space separated integers N and K.
+The second line contains N space separated integers A1​,A2​,…AN​, the elements of the array A.
+The third line contains N space separated integers P1​,P2​,…PN​, the elements of the permutation P.
+
+Output Format
+Print N space separated integers, the elements of the array A modulo 998244353 after performing the above operation K times.
+Constraints
+
+
+1≤N,K≤2⋅105
+1≤Ai​<998244353
+1≤Pi​≤N
+It is guaranteed that P is a permutation.
+
+
+Sample 1:
+InputOutput4 3
+2 6 1 7
+3 1 4 2
+32 22 42 32
+
+Explanation:
+The array A evolves as follows
+
+A0=[2,6,1,7]
+A1=[3,8,8,13]
+A2=[11,11,21,21]
+A3=[32,22,42,32]
+
+where Ai denotes the array after i operations.
+Thus, finally the elements of A read [32,22,42,32].

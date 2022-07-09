@@ -1,0 +1,43 @@
+
+A bracket sequence S is called dense if one of the following is true:
+
+S is empty.
+S=(X) where X is dense.
+
+You are given a bracket sequence S. What is the minimum number of brackets you must remove to make it dense?
+Input Format
+
+The first line of input will contain a single integer T, the number of test cases. The description of the T test cases follows.
+The first line of each test case contains one integer N, denoting the length of the bracket sequence.
+The second line of each test case contains the bracket sequence S of length N.
+
+Output Format
+For each test case, output on a new line the minimum number of brackets you must remove from S to make it dense.
+Constraints
+
+
+1≤T≤2⋅104
+1≤N≤3⋅105
+The sum of N over all test cases does not exceed 3⋅105
+
+
+Sample 1:
+InputOutput4
+8
+()(())()
+6
+((()))
+10
+()()()()()
+8
+((()))()
+2
+0
+4
+2
+
+Explanation:
+Test case 1: Remove the 2nd and 7th bracket to obtain ((())), which is dense.
+Test case 2: The given bracket sequence is already dense.
+Test case 3: Remove the 2nd, 4th, 7th, and 9th bracket to obtain ((())), which is dense.
+Test case 4: Remove the last 2 brackets to obtain ((())).
